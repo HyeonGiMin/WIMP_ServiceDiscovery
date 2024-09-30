@@ -15,7 +15,7 @@ jar {
 // Boot JAR 설정
 bootJar {
 	// Get the JAR file name and version from parameters or use defaults
-	def jarFileName = project.hasProperty('applicationName') ? project.jarFileName : project.name
+	def jarFileName = project.hasProperty('applicationName') ? project.applicationName : project.name
 	def jarVersion = project.hasProperty('applicationVersion') ? project.applicationVersion : project.version
 
 	archiveBaseName.set(jarFileName)  // Set the base name of the JAR
