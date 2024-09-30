@@ -13,6 +13,7 @@ java {
 
 jar{
 	enabled = false //Not Create pain FIle
+	archiveFileName = "${project.hasProperty('jarFileName') ? jarFileName : 'WIMPServiceDiscovery'}.jar"
 }
 
 repositories {
