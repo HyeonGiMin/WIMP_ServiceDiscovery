@@ -5,15 +5,20 @@ plugins {
 }
 
 group = 'com.wimp'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1-SNAPSHOT' // Default version if not overridden
+name = 'WIMPServiceDiscovery' // Default name if not overridden
 
 java {
 	sourceCompatibility = '17'
 }
 
-jar{
-	enabled = false //Not Create pain FIle
-	archiveFileName = "${project.hasProperty('jarFileName') ? jarFileName : 'WIMPServiceDiscovery'}.jar"
+jar {
+	// Get the JAR file name and version from parameters or use defaults
+	def jarFileName = project.hasProperty('applicationName') ? project.jarFileName : project.name
+	def jarVersion = project.hasProperty('applicationVersion') ? project.applicationVersion : project.version
+
+	archiveBaseName.set(jarFileName)  // Set the base name of the JAR
+	archiveVersion.set(jarVersion)      // Set the version of the JAR
 }
 
 repositories {
