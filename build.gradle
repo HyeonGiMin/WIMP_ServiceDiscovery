@@ -11,6 +11,10 @@ java {
 	sourceCompatibility = '17'
 }
 
+jar{
+	enabled = false //Not Create pain FIle
+}
+
 repositories {
 	mavenCentral()
 }
