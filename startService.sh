@@ -1,0 +1,1 @@
+java -Dspring.profiles.active=docker -jar /app.jar
